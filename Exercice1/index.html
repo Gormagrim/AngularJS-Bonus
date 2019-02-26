@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+
+  </head>
+  <form ng-app name="myForm">
+    Email:
+    <input type="email" name="input" ng-model="text" required />
+    <div ng-style="{color:'red'}" ng-show="myForm.input.$error.email">Not a valid e-mail address</div>
+    <div ng-style="{color:'green'}" ng-show="myForm.input.$valid">ok</div>
+    <div ng-show="myForm.input.$error.required">Merci de remplir le champs.</div>
+  </form>
+</html>

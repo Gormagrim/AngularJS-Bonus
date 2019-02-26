@@ -1,0 +1,36 @@
+  <form name="registerForm" novalidate="true" ng-submit="submit()">
+
+    <!-- Nom -->
+    <div>
+      <label>Nom</label>
+      <input type="text" name="name" ng-model="name"  minlength="2" maxlength="20" ng-pattern="text" required />
+      <div ng-style="{color:'red'}" ng-show="registerForm.name.$error.pattern">Merci d'entrer votre nom.</div>
+    </div>
+
+    <!-- email -->
+    <div>
+      <label>Email</label>
+      <input type="email" name="input" ng-model="input" required>
+      <div ng-style="{color:'red'}" ng-show="registerForm.input.$error.email">Adresse mail non valide.</div>
+    </div>
+
+    <!-- sujet -->
+    <div>
+      <label>Sujet</label>
+      <input type="text" name="subject" ng-model="subject"  minlength="2" maxlength="20"  required />
+      <div ng-style="{color:'red'}" ng-show="registerForm.subject.$error.minlength">Minimum 2 lettres svp</div>
+    </div>
+
+    <!-- message -->
+    <textarea name="message" rows="8" cols="80" type="text" ng-model="message" ng-minlength="5" ng-maxlength="200" required ></textarea>
+    <div ng-style="{color:'red'}" ng-show="registerForm.message.$error.minlength">Minimum 5 lettres svp</div>
+    <div ng-style="{color:'red'}" ng-show="registerForm.message.$error.maxlength">Maximum 200 lettres svp</div>
+
+    <button type="submit" id="submit" value="Submit" >Valider</button>
+  <!-- Ajouter un bouton envoyer et lui ajouter un évènement. L’évènement doit permettre de récupérer les entrées
+  utilisateurs de chacun des champs du formulaire et de les stocker par l’intermédiaire d’un tableau.
+  Il faudra donc créer un tableau vide en amont pour qu’un tableau vide existe au chargement de la page. -->
+  </form>
+  <div ng-repeat="test in tests">
+    <a ng-href="#!/{{$index}}">{{ test.Subject }}</a>
+  </div>
