@@ -7,21 +7,10 @@
     <script src="https://code.angularjs.org/1.7.7/angular-route.min.js"></script>
     <script src="script.js"></script>
   </head>
-  <body>
-<!-- 1.    Créer un formulaire avec les champs : nom, e-mail, sujet et texte. Le champ texte doit être un textarea. 
-          Chaque champ doit avoir son propre message d'erreur si la saisie est incorrecte. (vu dans les exercices précédents)
-    2.    Ajouter un bouton envoyer et lui ajouter un évènement. L’évènement doit permettre de récupérer les entrées utilisateurs
-          de chacun des champs du formulaire et de les stocker par l’intermédiaire d’un tableau. Il faudra donc créer un tableau vide en
-          amont pour qu’un tableau vide existe au chargement de la page.
-    3.    Pour afficher la liste des sujets, lire le tableau précédemment créé et n’afficher que les sujets grâce à une boucle. Chaque sujet doit être lien.
-    4.    Ajouter dans votre index la dépendance suivante : <script src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>.
-          Les routes en angularJS permettent de rediriger vers une vue en utilisant un controller.
-    5.    Dans le script, mettre en place les routes (afficher le formulaire et la liste des sujets / afficher les détails d’un sujet)
-    6.    Pour afficher les détails du sujet sélectionné il faut :
-      a.    Récupérer dans son URL le paramètre qui permet de l’identifier
-      b.    Créer un nouveau controller qui permet de récupérer le paramètre passé par l’URL et associer les valeurs correspondant à ce sujet
-      c.    Dans une nouvelle vue, permettre l’affichage de chacune des informations d’un sujet -->
-
-
+  <body ng-app="mailBox">
+    <h1>Ma boite mail</h1>
+    <!-- ng-view nous servira à l'affichage de nos vues. Elles seront dans une div, ce qui nous permettra
+          d'afficher d'autres choses au dessus ou en dessous. Par exemple une navbar...-->
+    <div ng-view></div>
   </body>
 </html>
